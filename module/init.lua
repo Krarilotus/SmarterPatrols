@@ -229,6 +229,45 @@ local function diag(fmt, ...)
 end
 
 local function player(p) return G.players + p * P.STRIDE end
+
+local valuesByAI = {}
+local AIC_OPTIONS = {
+  AttPatrolDistance = { default = function() return O.patrol.distance end, min = 4, max = 100 },
+  AttSiegeDefForwardOffset = { default = function() return O.siegedef.forward end, min = 0, max = 10 },
+  AttMinGroupSize = { default = function() return O.minSize end, min = 1, max = 50 },
+}
+
+local function aicOption(playerID, name)
+  local character = rd32(player(playerID) + P.AI_TYPE)
+  local values = valuesByAI[character]
+  local value = values and values[name]
+  if value ~= nil then return value end
+  return AIC_OPTIONS[name].default()
+end
+
+local function registerAICOptions()
+  for name, spec in pairs(AIC_OPTIONS) do
+    modules.aicloader:setAdditionalAICValue(name, function(character, value)
+      if value == nil then
+        local values = valuesByAI[character]
+        if values and values[name] ~= nil then return values[name] end
+        return spec.default()
+      end
+      local integer = type(value) == "number" and math.tointeger(value)
+      if not integer or integer < spec.min or integer > spec.max then
+        log(WARNING, string.format("%s: %s must be an integer from %d to %d",
+          MODULE_NAME, name, spec.min, spec.max))
+        return
+      end
+      local values = valuesByAI[character] or {}
+      values[name] = integer
+      valuesByAI[character] = values
+    end, function(character)
+      if valuesByAI[character] then valuesByAI[character][name] = nil end
+    end)
+  end
+end
+
 local function unit(id) return G.units + id * U.STRIDE end
 local function tribe(id) return G.tribes + id * G.tribeStride end
 
@@ -389,7 +428,8 @@ local function split(a, kind)
   local groups, total = collectGroups(a, kind)
   if total == 0 then return groups end
   local S = attackOf(a)
-  local wanted = math.min(wantedGroups(a, kind), math.max(1, total // O.minSize))
+  local minSize = aicOption(a, "AttMinGroupSize")
+  local wanted = math.min(wantedGroups(a, kind), math.max(1, total // minSize))
 
   local filled = {}
   for _, g in ipairs(groups) do
@@ -419,7 +459,7 @@ local function split(a, kind)
     created = created + 1
   end
 
-  local moves, tolerance = 0, math.max(1, created > 0 and 1 or O.minSize)
+  local moves, tolerance = 0, math.max(1, created > 0 and 1 or minSize)
   while moves < MAX_MOVES do
     local big, small = groups[1], groups[1]
     for _, g in ipairs(groups) do
@@ -540,7 +580,7 @@ local function ringPoints(a, kx, ky)
   local index = rd32(G.layerIndex + a * LAYER_PLAYER_STRIDE)
   if index < 0 or index > 8 then return nil end
   local layer = G.layer + index * LAYER_STRIDE
-  local ring = O.patrol.distance
+  local ring = aicOption(a, "AttPatrolDistance")
   local points, found = {}, 0
   for d = 0, DIRECTIONS - 1 do
     local angle = d * 2 * math.pi / DIRECTIONS
@@ -757,7 +797,7 @@ local function rally(a)
       end
       route.index = int(route.index, 1, #engines)
       local engine = engines[route.index]
-      local spot = mostlyMelee(group) and standAt(engine, kx, ky, O.siegedef.forward) or engine
+      local spot = mostlyMelee(group) and standAt(engine, kx, ky, aicOption(a, "AttSiegeDefForwardOffset")) or engine
       if not reaches(memo, a, area(leader.tile), area(spot.tile)) then spot = engine end
       -- With one engine the game only moves when the group is more than 5 tiles away.
       if #engines > 1 or distance(leader.x, leader.y, spot.x, spot.y) > ARRIVED then
@@ -965,6 +1005,8 @@ local function enable(self, config)
     return
   end
 
+  registerAICOptions()
+
   self.saved = {}
   local function save(address, size)
     self.saved[#self.saved + 1] = { address = address, bytes = core.readBytes(address, size) }
@@ -1004,6 +1046,12 @@ local function enable(self, config)
 end
 
 local function disable(self, config)
+  if self.saved ~= nil then
+    for name in pairs(AIC_OPTIONS) do
+      modules.aicloader:setAdditionalAICValue(name, nil)
+    end
+    valuesByAI = {}
+  end
   if self.saved ~= nil then
     for i = #self.saved, 1, -1 do core.writeCode(self.saved[i].address, self.saved[i].bytes) end
     self.saved = nil

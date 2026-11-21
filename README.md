@@ -42,3 +42,19 @@ What the module does, in plain English, is in `module/locale/description-en.md`.
   attacker's keep; every later round of three a quarter circle (4 points) behind.
 * Nothing is saved. After a load, patrol / siege defence units in unregistered troops (other than
   lord-hunt's) go back to the AI.
+
+## Per-character AIC settings
+
+With AIC Loader 1.1.1 or later in the 1.x series, you can add these integer fields under an
+AI character's existing `Personality` section. If a field is absent, the corresponding
+Customizations setting applies. The switches for patrols and siege defence still govern
+whether their features run.
+
+| AIC field | Values |
+| --- | --- |
+| `AttPatrolDistance` | Patrol distance in tiles, 4–100. |
+| `AttSiegeDefForwardOffset` | Melee screen distance ahead of the engine in tiles, 0–10. Zero keeps the screen beside the engine. |
+| `AttMinGroupSize` | Minimum group size used when splitting troops, 1–50. |
+
+Keep using `AttUnitPatrolGroupsCount` and `AttUnitSiegeDefGroupsCount` with the corresponding
+Customizations group count set to zero to take the count from the native AIC.

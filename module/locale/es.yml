@@ -1,0 +1,38 @@
+ai: IA
+diagnostics_group: Diagnóstico
+diagnostics_group_descr: Para diagnosticar problemas en ucp3.log.
+diagnostics_log: Registrar decisiones
+diagnostics_log_details: Desactivado por defecto.
+general_group: Tamaño de grupo
+general_group_details: 'El mínimo se aplica a patrullas y escoltas.
+
+
+  Mínimo de unidades por grupo — Valor predeterminado: 4. Se usa este valor si la personalidad de la IA no define otro.'
+general_min_size: Mínimo de unidades por grupo
+improvements: Mejoras
+misc: Varios
+patrol_distance: Distancia al castillo (casillas)
+patrol_enabled: Una ruta por patrulla
+patrol_enabled_details: Activado por defecto.
+patrol_group: Patrullas de ataque
+patrol_group_details: 'La IA reparte las patrullas en varias rutas alrededor del castillo.
+
+
+  Número de patrullas (0 = AIC) — Valor predeterminado: 0.
+
+
+  Distancia al castillo (casillas) — Valor predeterminado: 12. Se usa este valor si la personalidad de la IA no define otro.'
+patrol_groups: Número de patrullas (0 = AIC)
+siegedef_enabled: Dividir la escolta
+siegedef_enabled_details: Activado por defecto.
+siegedef_forward: Avance de tropas cuerpo a cuerpo (casillas)
+siegedef_group: Escolta de asedio
+siegedef_group_details: 'Los grupos se reparten entre las máquinas de asedio.
+
+
+  Número de escoltas (0 = AIC) — Valor predeterminado: 4.
+
+
+  Avance de tropas cuerpo a cuerpo (casillas) — Valor predeterminado: 4. Se usa este valor si la personalidad de la IA no define otro.'
+siegedef_groups: Número de escoltas (0 = AIC)
+tags.behavior: Comportamiento

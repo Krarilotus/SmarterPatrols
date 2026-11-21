@@ -1,0 +1,38 @@
+ai: KI
+diagnostics_group: Diagnose
+diagnostics_group_descr: Für die Fehlersuche in ucp3.log.
+diagnostics_log: Entscheidungen protokollieren
+diagnostics_log_details: Standardmäßig aus.
+general_group: Gruppengröße
+general_group_details: 'Die Mindestgröße gilt für Patrouillen und Belagerungsschutz.
+
+
+  Mindesteinheiten pro Gruppe — Standardwert: 4. Der Wert gilt, wenn die KI-Persönlichkeit keinen eigenen Wert vorgibt.'
+general_min_size: Mindesteinheiten pro Gruppe
+improvements: Verbesserungen
+misc: Sonstiges
+patrol_distance: Abstand zur Burg (Felder)
+patrol_enabled: Eigene Route für jede Patrouille
+patrol_enabled_details: Standardmäßig an.
+patrol_group: Angriffspatrouillen
+patrol_group_details: 'Die KI verteilt Angriffspatrouillen auf mehrere Routen um die Burg.
+
+
+  Anzahl der Patrouillen (0 = AIC) — Standardwert: 0.
+
+
+  Abstand zur Burg (Felder) — Standardwert: 12. Der Wert gilt, wenn die KI-Persönlichkeit keinen eigenen Wert vorgibt.'
+patrol_groups: Anzahl der Patrouillen (0 = AIC)
+siegedef_enabled: Belagerungsschutz aufteilen
+siegedef_enabled_details: Standardmäßig an.
+siegedef_forward: Vorsprung für Nahkämpfer (Felder)
+siegedef_group: Belagerungsschutz
+siegedef_group_details: 'Die Gruppen verteilen sich auf verschiedene Belagerungsgeräte.
+
+
+  Anzahl der Schutzgruppen (0 = AIC) — Standardwert: 4.
+
+
+  Vorsprung für Nahkämpfer (Felder) — Standardwert: 4. Der Wert gilt, wenn die KI-Persönlichkeit keinen eigenen Wert vorgibt.'
+siegedef_groups: Anzahl der Schutzgruppen (0 = AIC)
+tags.behavior: Verhalten

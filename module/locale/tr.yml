@@ -1,0 +1,38 @@
+ai: YZ
+diagnostics_group: Tanılama
+diagnostics_group_descr: ucp3.log ile hata ayıklamak için.
+diagnostics_log: Kararları günlüğe yaz
+diagnostics_log_details: Varsayılan olarak kapalı.
+general_group: Grup boyutu
+general_group_details: 'Alt sınır devriyeler ve koruma grupları için geçerlidir.
+
+
+  Grup başına en az asker — Varsayılan değer: 4. YZ karakterinde değer yoksa bu değer kullanılır.'
+general_min_size: Grup başına en az asker
+improvements: İyileştirmeler
+misc: Diğer
+patrol_distance: Kaleye uzaklık (kare)
+patrol_enabled: Her devriyeye ayrı rota
+patrol_enabled_details: Varsayılan olarak açık.
+patrol_group: Taarruz devriyeleri
+patrol_group_details: 'YZ, devriyeleri kale çevresindeki ayrı rotalara dağıtır.
+
+
+  Devriye sayısı (0 = AIC) — Varsayılan değer: 0.
+
+
+  Kaleye uzaklık (kare) — Varsayılan değer: 12. YZ karakterinde değer yoksa bu değer kullanılır.'
+patrol_groups: Devriye sayısı (0 = AIC)
+siegedef_enabled: Korumayı gruplara böl
+siegedef_enabled_details: Varsayılan olarak açık.
+siegedef_forward: Yakın dövüşçülerin ön mesafesi (kare)
+siegedef_group: Kuşatma koruması
+siegedef_group_details: 'Gruplar kuşatma makineleri arasında dağılır.
+
+
+  Koruma grubu sayısı (0 = AIC) — Varsayılan değer: 4.
+
+
+  Yakın dövüşçülerin ön mesafesi (kare) — Varsayılan değer: 4. YZ karakterinde değer yoksa bu değer kullanılır.'
+siegedef_groups: Koruma grubu sayısı (0 = AIC)
+tags.behavior: Davranış

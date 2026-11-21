@@ -1,0 +1,38 @@
+ai: 电脑玩家
+diagnostics_group: 诊断
+diagnostics_group_descr: 在 ucp3.log 中查看诊断信息。
+diagnostics_log: 记录决策
+diagnostics_log_details: 默认关闭。
+general_group: 小队规模
+general_group_details: '最小规模适用于巡逻队和攻城护卫。
+
+
+  每队最少兵力 — 默认值: 4. 电脑角色没有单独设置时使用此值。'
+general_min_size: 每队最少兵力
+improvements: 改进
+misc: 其他
+patrol_distance: 离城距离（格）
+patrol_enabled: 每队使用独立路线
+patrol_enabled_details: 默认开启。
+patrol_group: 进攻巡逻队
+patrol_group_details: '电脑玩家让多支巡逻队沿不同路线绕城。
+
+
+  巡逻队数量（0 = AIC） — 默认值: 0.
+
+
+  离城距离（格） — 默认值: 12. 电脑角色没有单独设置时使用此值。'
+patrol_groups: 巡逻队数量（0 = AIC）
+siegedef_enabled: 拆分攻城护卫
+siegedef_enabled_details: 默认开启。
+siegedef_forward: 近战护卫前出距离（格）
+siegedef_group: 攻城护卫
+siegedef_group_details: '护卫小队分散保护不同的攻城器械。
+
+
+  护卫小队数量（0 = AIC） — 默认值: 4.
+
+
+  近战护卫前出距离（格） — 默认值: 4. 电脑角色没有单独设置时使用此值。'
+siegedef_groups: 护卫小队数量（0 = AIC）
+tags.behavior: 行为

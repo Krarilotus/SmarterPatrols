@@ -1,22 +1,23 @@
 options:
 - display: GroupBox
-  category: [Smarter Patrols]
+  category:
+  - '{{ai}}'
+  - '{{improvements}}'
   header: '{{patrol_group}}'
-  text: '{{patrol_group_descr}}'
+  text: '{{patrol_group_details}}'
   hasHeader: true
   children:
   - url: smarter-patrols.patrol.enabled
     name: smarter-patrols-patrol-enabled
-    text: '{{patrol_enabled}}'
-    tooltip: '{{patrol_enabled_tooltip}}'
-    display: Switch
+    text: '{{patrol_enabled_details}}'
+    display: UCP2Switch
     contents:
       type: boolean
       value: true
+    header: '{{patrol_enabled}}'
   - url: smarter-patrols.patrol.groups
     name: smarter-patrols-patrol-groups
     text: '{{patrol_groups}}'
-    tooltip: '{{patrol_groups_tooltip}}'
     display: Number
     contents:
       type: integer
@@ -27,7 +28,6 @@ options:
   - url: smarter-patrols.patrol.distance
     name: smarter-patrols-patrol-distance
     text: '{{patrol_distance}}'
-    tooltip: '{{patrol_distance_tooltip}}'
     display: Number
     contents:
       type: integer
@@ -35,25 +35,25 @@ options:
       min: 4
       max: 100
       step: 1
-
 - display: GroupBox
-  category: [Smarter Patrols]
+  category:
+  - '{{ai}}'
+  - '{{improvements}}'
   header: '{{siegedef_group}}'
-  text: '{{siegedef_group_descr}}'
+  text: '{{siegedef_group_details}}'
   hasHeader: true
   children:
   - url: smarter-patrols.siegedef.enabled
     name: smarter-patrols-siegedef-enabled
-    text: '{{siegedef_enabled}}'
-    tooltip: '{{siegedef_enabled_tooltip}}'
-    display: Switch
+    text: '{{siegedef_enabled_details}}'
+    display: UCP2Switch
     contents:
       type: boolean
       value: true
+    header: '{{siegedef_enabled}}'
   - url: smarter-patrols.siegedef.groups
     name: smarter-patrols-siegedef-groups
     text: '{{siegedef_groups}}'
-    tooltip: '{{siegedef_groups_tooltip}}'
     display: Number
     contents:
       type: integer
@@ -64,7 +64,6 @@ options:
   - url: smarter-patrols.siegedef.forward
     name: smarter-patrols-siegedef-forward
     text: '{{siegedef_forward}}'
-    tooltip: '{{siegedef_forward_tooltip}}'
     display: Number
     contents:
       type: integer
@@ -72,17 +71,17 @@ options:
       min: 0
       max: 10
       step: 1
-
 - display: GroupBox
-  category: [Smarter Patrols]
+  category:
+  - '{{ai}}'
+  - '{{improvements}}'
   header: '{{general_group}}'
-  text: '{{general_group_descr}}'
+  text: '{{general_group_details}}'
   hasHeader: true
   children:
   - url: smarter-patrols.general.min_size
     name: smarter-patrols-general-min-size
     text: '{{general_min_size}}'
-    tooltip: '{{general_min_size_tooltip}}'
     display: Number
     contents:
       type: integer
@@ -90,18 +89,20 @@ options:
       min: 1
       max: 50
       step: 1
-
 - display: GroupBox
-  category: [Smarter Patrols]
+  category:
+  - '{{misc}}'
   header: '{{diagnostics_group}}'
   text: '{{diagnostics_group_descr}}'
   hasHeader: true
   children:
   - url: smarter-patrols.diagnostics.log
     name: smarter-patrols-diagnostics-log
-    text: '{{diagnostics_log}}'
-    tooltip: '{{diagnostics_log_tooltip}}'
-    display: Switch
+    text: '{{diagnostics_log_details}}'
+    display: UCP2Switch
     contents:
       type: boolean
       value: false
+    header: '{{diagnostics_log}}'
+meta:
+  version: 1.0.0

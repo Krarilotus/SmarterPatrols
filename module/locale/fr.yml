@@ -1,0 +1,38 @@
+ai: IA
+diagnostics_group: Diagnostic
+diagnostics_group_descr: Pour le dépannage dans ucp3.log.
+diagnostics_log: Journaliser les décisions
+diagnostics_log_details: Désactivé par défaut.
+general_group: Taille des groupes
+general_group_details: 'Le minimum s’applique aux patrouilles et aux escortes.
+
+
+  Minimum de soldats par groupe — Valeur par défaut: 4. Cette valeur s’applique si la personnalité de l’IA ne fixe aucune valeur.'
+general_min_size: Minimum de soldats par groupe
+improvements: Améliorations
+misc: Divers
+patrol_distance: Distance du château (cases)
+patrol_enabled: Un itinéraire par patrouille
+patrol_enabled_details: Activé par défaut.
+patrol_group: Patrouilles d’assaut
+patrol_group_details: 'L’IA répartit les patrouilles sur plusieurs itinéraires autour du château.
+
+
+  Nombre de patrouilles (0 = AIC) — Valeur par défaut: 0.
+
+
+  Distance du château (cases) — Valeur par défaut: 12. Cette valeur s’applique si la personnalité de l’IA ne fixe aucune valeur.'
+patrol_groups: Nombre de patrouilles (0 = AIC)
+siegedef_enabled: Répartir les escortes
+siegedef_enabled_details: Activé par défaut.
+siegedef_forward: Avance de la mêlée (cases)
+siegedef_group: Escorte des engins
+siegedef_group_details: 'Les groupes se répartissent entre les engins de siège.
+
+
+  Nombre d’escortes (0 = AIC) — Valeur par défaut: 4.
+
+
+  Avance de la mêlée (cases) — Valeur par défaut: 4. Cette valeur s’applique si la personnalité de l’IA ne fixe aucune valeur.'
+siegedef_groups: Nombre d’escortes (0 = AIC)
+tags.behavior: Comportement

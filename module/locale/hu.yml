@@ -1,0 +1,38 @@
+ai: MI
+diagnostics_group: Diagnosztika
+diagnostics_group_descr: Hibakereséshez az ucp3.log fájlban.
+diagnostics_log: Döntések naplózása
+diagnostics_log_details: Alapértelmezésben ki van kapcsolva.
+general_group: Csoportméret
+general_group_details: 'A minimum a járőrökre és a kísérőkre érvényes.
+
+
+  Legkevesebb egység csoportonként — Alapérték: 4. Ez az érték érvényes, ha az MI személyisége nem ad meg másikat.'
+general_min_size: Legkevesebb egység csoportonként
+improvements: Fejlesztések
+misc: Egyéb
+patrol_distance: Távolság a vártól (mező)
+patrol_enabled: Külön útvonal minden járőrnek
+patrol_enabled_details: Alapértelmezésben be van kapcsolva.
+patrol_group: Támadó járőrök
+patrol_group_details: 'Az MI több útvonalra osztja a vár körüli járőröket.
+
+
+  Járőrök száma (0 = AIC) — Alapérték: 0.
+
+
+  Távolság a vártól (mező) — Alapérték: 12. Ez az érték érvényes, ha az MI személyisége nem ad meg másikat.'
+patrol_groups: Járőrök száma (0 = AIC)
+siegedef_enabled: Kíséret felosztása
+siegedef_enabled_details: Alapértelmezésben be van kapcsolva.
+siegedef_forward: Közelharcosok előretolása (mező)
+siegedef_group: Ostromgépek kísérete
+siegedef_group_details: 'A csoportok megoszlanak az ostromgépek között.
+
+
+  Kísérőcsoportok száma (0 = AIC) — Alapérték: 4.
+
+
+  Közelharcosok előretolása (mező) — Alapérték: 4. Ez az érték érvényes, ha az MI személyisége nem ad meg másikat.'
+siegedef_groups: Kísérőcsoportok száma (0 = AIC)
+tags.behavior: Viselkedés

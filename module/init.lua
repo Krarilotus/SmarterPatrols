@@ -104,7 +104,8 @@ local AOB_MOVE = "83 EC 34 33 C0 55 8B 6C 24 44 57 8B 7C 24 44 3B F8 89 4C 24 08
 local AOB_GO_DEFENSIVE = "83 EC 0C 53 8B 5C 24 14 69 DB F4 39 00 00 83 BB ? ? ? ? 00"
 
 -- GameState::canNavigateFromKeepToKeep: the area map, the path finder and the area test.
-local AOB_KEEP_TO_KEEP = "56 8B 74 24 08 8B C6 69 C0 F4 39 00 00 03 C1 83 B8 ? ? ? ? 00 75 09 B8 01 00 00 00"
+-- Mode 0 wrapper. The mode 2 wrapper shares its prologue and native target.
+local AOB_KEEP_TO_KEEP = "56 8B 74 24 08 8B C6 69 C0 F4 39 00 00 03 C1 83 B8 ? ? ? ? 00 75 09 B8 01 00 00 00 5E C2 08 00 8B 54 24 0C 69 D2 F4 39 00 ? ? ? ? B9 ? ? ? ? ? ? ? 8B 89 ? ? ? ? 8B 90 ? ? ? ? ? B7 04 4D D8 ? ? ? ? 85 C0 75 ? ? ? ? C2 08 00 ? ? ? ? D8 ? ? ? ? ? ? 74 ED 66 3B C8 74 B1 0F BF C9 6A 00 51 0F BF D0 52 56 B9 ? ? ? ? E8"
 local K2K_AREA = { 0x42, { 0x0F, 0xB7, 0x04, 0x4D } }
 local K2K_PATHS = { 0x72, { 0xB9 } }
 local K2K_CAN_NAVIGATE = 0x77

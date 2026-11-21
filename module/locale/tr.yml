@@ -1,38 +1,55 @@
-ai: YZ
+ai: Yapay zekâ
 diagnostics_group: Tanılama
-diagnostics_group_descr: ucp3.log ile hata ayıklamak için.
-diagnostics_log: Kararları günlüğe yaz
-diagnostics_log_details: Varsayılan olarak kapalı.
-general_group: Grup boyutu
-general_group_details: 'Alt sınır devriyeler ve koruma grupları için geçerlidir.
+diagnostics_group_descr: Test ve hata ayıklama için.
+diagnostics_log: Grup hareketlerini günlüğe yaz
+diagnostics_log_details: |-
+  Birlikler gruplara ayrıldığında veya tekrar birleştirildiğinde ucp3.log dosyasına bir satır yazar.
 
+  Varsayılan olarak kapalı.
+general_group: Gruplar
+general_group_details: |-
+  Her iki birlik türü için de geçerlidir.
 
-  Grup başına en az asker — Varsayılan değer: 4. YZ karakterinde değer yoksa bu değer kullanılır.'
-general_min_size: Grup başına en az asker
+  En küçük grup (birim) — Bir birlik yalnızca her grupta en az bu kadar birim kalacak şekilde bölünür.
+
+  Varsayılan: 4. Yapay zekâ kişiliği (AIC) kendi değerini belirtmediğinde kullanılır.
+general_min_size: En küçük grup (birim)
 improvements: İyileştirmeler
 misc: Diğer
-patrol_distance: Kaleye uzaklık (kare)
-patrol_enabled: Her devriyeye ayrı rota
-patrol_enabled_details: Varsayılan olarak açık.
-patrol_group: Taarruz devriyeleri
-patrol_group_details: 'YZ, devriyeleri kale çevresindeki ayrı rotalara dağıtır.
+patrol_distance: Kaleden uzaklık (kare)
+patrol_enabled: Her devriye grubuna kendi rotasını ver
+patrol_enabled_details: |-
+  1. grup kalenin çevresinde bir yönde, 2. grup ters yönde dolaşır; 3. grup ise ön cephe (saldıranın kalesine bakan taraf) boyunca gidip gelir. 4., 5. ve 6. gruplar da 1., 2. ve 3. ile aynı rotayı çeyrek tur geriden izler ve bu şekilde devam eder.
 
+  Varsayılan olarak açık.
+patrol_group: Devriye birlikleri
+patrol_group_details: |-
+  Yapay zekânın saldırı devriye birlikleri (yapay zekâ dosyasında AttUnitPatrol). Normalde yalnızca ilk devriye grubu hareket eder; ikincisi tüm saldırı boyunca toplanma noktasında bekler.
 
-  Devriye sayısı (0 = AIC) — Varsayılan değer: 0.
+  Devriye grubu sayısı — 0 değeri yapay zekânın kendi dosyasındaki sayıyı kullanır. Oyun tek başına en fazla 2 grubu yönetebilir; bu modül 12'ye kadar destekler.
 
+  Varsayılan: 0.
 
-  Kaleye uzaklık (kare) — Varsayılan değer: 12. YZ karakterinde değer yoksa bu değer kullanılır.'
-patrol_groups: Devriye sayısı (0 = AIC)
-siegedef_enabled: Korumayı gruplara böl
-siegedef_enabled_details: Varsayılan olarak açık.
-siegedef_forward: Yakın dövüşçülerin ön mesafesi (kare)
-siegedef_group: Kuşatma koruması
-siegedef_group_details: 'Gruplar kuşatma makineleri arasında dağılır.
+  Kaleden uzaklık (kare) — Devriyelerin kalenin ne kadar dışında yürüyeceği (surlar ve hendekler dolaşılarak yürüme mesafesi). 12, oyunun kendi devriyesinin kullandığı değerdir.
 
+  Varsayılan: 12. Yapay zekâ kişiliği (AIC) kendi değerini belirtmediğinde kullanılır.
+patrol_groups: Devriye grubu sayısı
+siegedef_enabled: Kuşatma korumasını daha fazla gruba böl
+siegedef_enabled_details: |-
+  Her grup farklı bir kuşatma aracında başlar ve her ikinci grup ters yönde yürür; böylece tek bir küme hâlinde hareket etmek yerine tüm araçlara dağılırlar.
 
-  Koruma grubu sayısı (0 = AIC) — Varsayılan değer: 4.
+  Varsayılan olarak açık.
+siegedef_forward: Yakın dövüş grupları araçların bu kadar önünde yürür (kare)
+siegedef_group: Kuşatma koruma birlikleri
+siegedef_group_details: |-
+  Yapay zekânın kuşatma araçlarını koruyan birlikler (yapay zekâ dosyasında AttUnitSiegeDef). Bir kuşatma aracından diğerine yürürler ve surlara saldırı başladığında hücum ederler.
 
+  Kuşatma koruma grubu sayısı — 0 değeri yapay zekânın kendi dosyasındaki sayıyı kullanır. Oyun tek başına en fazla 2 grubu yönetebilir; bu modül 12'ye kadar destekler.
 
-  Yakın dövüşçülerin ön mesafesi (kare) — Varsayılan değer: 4. YZ karakterinde değer yoksa bu değer kullanılır.'
-siegedef_groups: Koruma grubu sayısı (0 = AIC)
+  Varsayılan: 4.
+
+  Yakın dövüş grupları araçların bu kadar önünde yürür (kare) — Ağırlıklı olarak yakın dövüş birliklerinden oluşan gruplar, savunmacılar kuşatma araçları yerine kendilerine ateş etsin diye araçlardan bu kadar kare daha yakın durur. Okçular ve diğer menzilli gruplar araçların yanında kalır. 0 değeri tüm grupları araçların yanında tutar.
+
+  Varsayılan: 4. Yapay zekâ kişiliği (AIC) kendi değerini belirtmediğinde kullanılır.
+siegedef_groups: Kuşatma koruma grubu sayısı
 tags.behavior: Davranış

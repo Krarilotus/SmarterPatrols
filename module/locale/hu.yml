@@ -1,38 +1,55 @@
 ai: MI
 diagnostics_group: Diagnosztika
-diagnostics_group_descr: Hibakereséshez az ucp3.log fájlban.
-diagnostics_log: Döntések naplózása
-diagnostics_log_details: Alapértelmezésben ki van kapcsolva.
-general_group: Csoportméret
-general_group_details: 'A minimum a járőrökre és a kísérőkre érvényes.
+diagnostics_group_descr: Teszteléshez.
+diagnostics_log: Csoportműveletek naplózása
+diagnostics_log_details: |-
+  Sort ír a ucp3.log fájlba, amikor csapatokat csoportokra oszt vagy újra összevon.
 
+  Alapértelmezés szerint kikapcsolva.
+general_group: Csoportok
+general_group_details: |-
+  Mindkét csapattípusra érvényes.
 
-  Legkevesebb egység csoportonként — Alapérték: 4. Ez az érték érvényes, ha az MI személyisége nem ad meg másikat.'
-general_min_size: Legkevesebb egység csoportonként
+  Legkisebb csoport (egység) — Egy csapat csak addig osztható tovább, amíg minden csoportba legalább ennyi egység jut.
+
+  Alapértelmezett: 4. Akkor érvényes, ha az MI személyisége (AIC) nem ad meg saját értéket.
+general_min_size: Legkisebb csoport (egység)
 improvements: Fejlesztések
 misc: Egyéb
 patrol_distance: Távolság a vártól (mező)
-patrol_enabled: Külön útvonal minden járőrnek
-patrol_enabled_details: Alapértelmezésben be van kapcsolva.
-patrol_group: Támadó járőrök
-patrol_group_details: 'Az MI több útvonalra osztja a vár körüli járőröket.
+patrol_enabled: Saját útvonal minden járőrcsoportnak
+patrol_enabled_details: |-
+  Az 1. csoport egyik irányban kerüli meg a várat, a 2. a másik irányban, a 3. pedig a vár eleje (a támadó vára felőli oldal) mentén jár oda-vissza. A 4., 5. és 6. csoport ugyanezt teszi egy negyed körrel lemaradva, és így tovább.
 
+  Alapértelmezés szerint bekapcsolva.
+patrol_group: Járőrcsapatok
+patrol_group_details: |-
+  Az MI támadó járőrcsapatai (AttUnitPatrol az MI-fájlban). Az alapjátékban csak az első járőrcsoport mozog; a második az egész támadás alatt a gyülekezési ponton áll.
 
-  Járőrök száma (0 = AIC) — Alapérték: 0.
+  Járőrcsoportok száma — A 0 az MI saját fájljának értékét használja. Az alapjáték legfeljebb 2 csoportot kezel; ez a modul akár 12-t is.
 
+  Alapértelmezett: 0.
 
-  Távolság a vártól (mező) — Alapérték: 12. Ez az érték érvényes, ha az MI személyisége nem ad meg másikat.'
-patrol_groups: Járőrök száma (0 = AIC)
-siegedef_enabled: Kíséret felosztása
-siegedef_enabled_details: Alapértelmezésben be van kapcsolva.
-siegedef_forward: Közelharcosok előretolása (mező)
-siegedef_group: Ostromgépek kísérete
-siegedef_group_details: 'A csoportok megoszlanak az ostromgépek között.
+  Távolság a vártól (mező) — Milyen messze járőröznek a váron kívül, gyaloglási távolságban mérve (falak és várárkok megkerülésével). A 12 a játék alapértéke.
 
+  Alapértelmezett: 12. Akkor érvényes, ha az MI személyisége (AIC) nem ad meg saját értéket.
+patrol_groups: Járőrcsoportok száma
+siegedef_enabled: Ostromvédelem felosztása több csoportra
+siegedef_enabled_details: |-
+  Minden csoport más ostromgépnél indul, és minden második csoport az ellenkező irányba jár, így az összes ostromgépet lefedik ahelyett, hogy egyetlen tömegben mozognának.
 
-  Kísérőcsoportok száma (0 = AIC) — Alapérték: 4.
+  Alapértelmezés szerint bekapcsolva.
+siegedef_forward: Közelharci csoportok előretolása a gépek elé (mező)
+siegedef_group: Ostromvédelmi csapatok
+siegedef_group_details: |-
+  Az MI ostromgépeit őrző csapatok (AttUnitSiegeDef az MI-fájlban). Ostromgépről ostromgépre járnak, és a falak ostromakor támadásba lendülnek.
 
+  Ostromvédelmi csoportok száma — A 0 az MI saját fájljának értékét használja. Az alapjáték legfeljebb 2 csoportot kezel; ez a modul akár 12-t is.
 
-  Közelharcosok előretolása (mező) — Alapérték: 4. Ez az érték érvényes, ha az MI személyisége nem ad meg másikat.'
-siegedef_groups: Kísérőcsoportok száma (0 = AIC)
+  Alapértelmezett: 4.
+
+  Közelharci csoportok előretolása a gépek elé (mező) — A főként közelharci egységekből álló csoportok ennyi mezővel közelebb állnak a várhoz, mint az ostromgépek, hogy a védők őket lőjék a gépek helyett. Az íjászok és más távolsági csoportok a gépeknél maradnak. 0 esetén minden csoport a gépeknél marad.
+
+  Alapértelmezett: 4. Akkor érvényes, ha az MI személyisége (AIC) nem ad meg saját értéket.
+siegedef_groups: Ostromvédelmi csoportok száma
 tags.behavior: Viselkedés

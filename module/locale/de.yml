@@ -1,38 +1,55 @@
 ai: KI
 diagnostics_group: Diagnose
-diagnostics_group_descr: Für die Fehlersuche in ucp3.log.
-diagnostics_log: Entscheidungen protokollieren
-diagnostics_log_details: Standardmäßig aus.
-general_group: Gruppengröße
-general_group_details: 'Die Mindestgröße gilt für Patrouillen und Belagerungsschutz.
+diagnostics_group_descr: Für Tests und Fehlersuche.
+diagnostics_log: Gruppenentscheidungen protokollieren
+diagnostics_log_details: |-
+  Schreibt eine Zeile in ucp3.log, sobald Truppen in Gruppen aufgeteilt oder wieder zusammengeführt werden.
 
+  Standardmäßig deaktiviert.
+general_group: Gruppen
+general_group_details: |-
+  Gilt für beide Truppenarten.
 
-  Mindesteinheiten pro Gruppe — Standardwert: 4. Der Wert gilt, wenn die KI-Persönlichkeit keinen eigenen Wert vorgibt.'
-general_min_size: Mindesteinheiten pro Gruppe
+  Mindestgröße einer Gruppe (Einheiten) — Eine Truppe wird nur so weit aufgeteilt, dass jede Gruppe noch mindestens diese Anzahl an Einheiten erhält.
+
+  Standard: 4. Gilt, wenn die KI-Persönlichkeit (AIC) keinen eigenen Wert vorgibt.
+general_min_size: Mindestgröße einer Gruppe (Einheiten)
 improvements: Verbesserungen
 misc: Sonstiges
 patrol_distance: Abstand zur Burg (Felder)
-patrol_enabled: Eigene Route für jede Patrouille
-patrol_enabled_details: Standardmäßig an.
+patrol_enabled: Eigene Route für jede Patrouillengruppe
+patrol_enabled_details: |-
+  Gruppe 1 umkreist die Burg in einer Richtung, Gruppe 2 in der anderen Richtung, Gruppe 3 läuft an der Vorderseite (der dem Angreifer zugewandten Seite) hin und her. Die Gruppen 4, 5 und 6 machen dasselbe wie 1, 2 und 3, um eine Viertelrunde versetzt, und so weiter.
+
+  Standardmäßig aktiviert.
 patrol_group: Angriffspatrouillen
-patrol_group_details: 'Die KI verteilt Angriffspatrouillen auf mehrere Routen um die Burg.
+patrol_group_details: |-
+  Die Angriffspatrouillen der KI (AttUnitPatrol in der AIC-Datei). Normalerweise bewegt sich nur die erste Patrouillengruppe; die zweite bleibt den gesamten Angriff über am Sammelpunkt stehen.
 
+  Anzahl der Patrouillengruppen — 0 verwendet den Wert aus der KI-Datei. Das Originalspiel kommt nur mit bis zu 2 Gruppen zurecht; dieses Modul unterstützt bis zu 12.
 
-  Anzahl der Patrouillen (0 = AIC) — Standardwert: 0.
+  Standard: 0.
 
+  Abstand zur Burg (Felder) — Wie weit außerhalb der Burg die Patrouillen laufen, gemessen als Laufweg (um Mauern und Burggräben herum). 12 entspricht dem Standardwert des Spiels.
 
-  Abstand zur Burg (Felder) — Standardwert: 12. Der Wert gilt, wenn die KI-Persönlichkeit keinen eigenen Wert vorgibt.'
-patrol_groups: Anzahl der Patrouillen (0 = AIC)
-siegedef_enabled: Belagerungsschutz aufteilen
-siegedef_enabled_details: Standardmäßig an.
-siegedef_forward: Vorsprung für Nahkämpfer (Felder)
+  Standard: 12. Gilt, wenn die KI-Persönlichkeit (AIC) keinen eigenen Wert vorgibt.
+patrol_groups: Anzahl der Patrouillengruppen
+siegedef_enabled: Belagerungsschutz in mehr Gruppen aufteilen
+siegedef_enabled_details: |-
+  Jede Gruppe startet an einem anderen Belagerungsgerät und jede zweite Gruppe läuft in die Gegenrichtung, sodass sie sich auf alle Geräte verteilen, statt als ein einzelner Pulk zu laufen.
+
+  Standardmäßig aktiviert.
+siegedef_forward: Vorsprung für Nahkampfgruppen vor den Geräten (Felder)
 siegedef_group: Belagerungsschutz
-siegedef_group_details: 'Die Gruppen verteilen sich auf verschiedene Belagerungsgeräte.
+siegedef_group_details: |-
+  Die Truppen, die die Belagerungsgeräte der KI bewachen (AttUnitSiegeDef in der AIC-Datei). Sie laufen von einem Belagerungsgerät zum nächsten und greifen an, sobald der Sturm auf die Mauern beginnt.
 
+  Anzahl der Schutzgruppen — 0 verwendet den Wert aus der KI-Datei. Das Originalspiel kommt nur mit bis zu 2 Gruppen zurecht; dieses Modul unterstützt bis zu 12.
 
-  Anzahl der Schutzgruppen (0 = AIC) — Standardwert: 4.
+  Standard: 4.
 
+  Vorsprung für Nahkampfgruppen vor den Geräten (Felder) — Gruppen, die überwiegend aus Nahkämpfern bestehen, stehen so viele Felder näher an der Burg als die Belagerungsgeräte, damit die Verteidiger auf sie statt auf die Geräte schießen. Bogenschützen und andere Fernkämpfer bleiben bei den Geräten. Bei 0 bleiben alle Gruppen bei den Geräten.
 
-  Vorsprung für Nahkämpfer (Felder) — Standardwert: 4. Der Wert gilt, wenn die KI-Persönlichkeit keinen eigenen Wert vorgibt.'
-siegedef_groups: Anzahl der Schutzgruppen (0 = AIC)
+  Standard: 4. Gilt, wenn die KI-Persönlichkeit (AIC) keinen eigenen Wert vorgibt.
+siegedef_groups: Anzahl der Schutzgruppen
 tags.behavior: Verhalten

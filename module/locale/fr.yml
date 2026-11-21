@@ -1,38 +1,55 @@
 ai: IA
 diagnostics_group: Diagnostic
-diagnostics_group_descr: Pour le dépannage dans ucp3.log.
-diagnostics_log: Journaliser les décisions
-diagnostics_log_details: Désactivé par défaut.
-general_group: Taille des groupes
-general_group_details: 'Le minimum s’applique aux patrouilles et aux escortes.
+diagnostics_group_descr: Pour les tests et le dépannage.
+diagnostics_log: Journaliser l'activité des groupes
+diagnostics_log_details: |-
+  Écrit une ligne dans ucp3.log chaque fois que des troupes sont divisées en groupes ou regroupées.
 
+  Désactivé par défaut.
+general_group: Groupes
+general_group_details: |-
+  S'applique aux deux types de troupes.
 
-  Minimum de soldats par groupe — Valeur par défaut: 4. Cette valeur s’applique si la personnalité de l’IA ne fixe aucune valeur.'
-general_min_size: Minimum de soldats par groupe
+  Taille minimale d'un groupe (unités) — Une troupe n'est divisée que tant que chaque groupe conserve au moins ce nombre d'unités.
+
+  Par défaut : 4. Utilisé lorsque la personnalité de l'IA (AIC) ne définit pas de valeur propre.
+general_min_size: Taille minimale d'un groupe (unités)
 improvements: Améliorations
 misc: Divers
 patrol_distance: Distance du château (cases)
-patrol_enabled: Un itinéraire par patrouille
-patrol_enabled_details: Activé par défaut.
-patrol_group: Patrouilles d’assaut
-patrol_group_details: 'L’IA répartit les patrouilles sur plusieurs itinéraires autour du château.
+patrol_enabled: Donner son propre itinéraire à chaque groupe de patrouille
+patrol_enabled_details: |-
+  Le groupe 1 contourne le château dans un sens, le groupe 2 dans l'autre sens, et le groupe 3 fait des allers-retours le long de la façade (le côté faisant face au château de l'attaquant). Les groupes 4, 5 et 6 font de même qu'1, 2 et 3 avec un quart de tour de décalage, et ainsi de suite.
 
+  Activé par défaut.
+patrol_group: Troupes de patrouille
+patrol_group_details: |-
+  Les troupes de patrouille d'attaque de l'IA (AttUnitPatrol dans le fichier d'IA). Normalement, seul le premier groupe de patrouille bouge ; le second reste immobile au point de ralliement pendant toute l'attaque.
 
-  Nombre de patrouilles (0 = AIC) — Valeur par défaut: 0.
+  Nombre de groupes de patrouille — 0 utilise la valeur du fichier de l'IA. Le jeu d'origine ne gère pas plus de 2 groupes ; ce module permet d'aller jusqu'à 12.
 
+  Par défaut : 0.
 
-  Distance du château (cases) — Valeur par défaut: 12. Cette valeur s’applique si la personnalité de l’IA ne fixe aucune valeur.'
-patrol_groups: Nombre de patrouilles (0 = AIC)
-siegedef_enabled: Répartir les escortes
-siegedef_enabled_details: Activé par défaut.
-siegedef_forward: Avance de la mêlée (cases)
-siegedef_group: Escorte des engins
-siegedef_group_details: 'Les groupes se répartissent entre les engins de siège.
+  Distance du château (cases) — Distance à laquelle les patrouilles circulent autour du château, mesurée en distance de marche (en contournant murs et douves). 12 est la valeur d'origine du jeu.
 
+  Par défaut : 12. Utilisé lorsque la personnalité de l'IA (AIC) ne définit pas de valeur propre.
+patrol_groups: Nombre de groupes de patrouille
+siegedef_enabled: Diviser l'escorte de siège en plusieurs groupes
+siegedef_enabled_details: |-
+  Chaque groupe commence près d'un engin de siège différent et un groupe sur deux marche en sens inverse, afin de couvrir tous les engins au lieu de former un seul bloc.
 
-  Nombre d’escortes (0 = AIC) — Valeur par défaut: 4.
+  Activé par défaut.
+siegedef_forward: Avance des groupes de mêlée devant les engins (cases)
+siegedef_group: Troupes d'escorte de siège
+siegedef_group_details: |-
+  Les troupes qui protègent les engins de siège de l'IA (AttUnitSiegeDef dans le fichier d'IA). Elles vont d'un engin de siège à l'autre et attaquent dès que l'assaut des murs commence.
 
+  Nombre de groupes d'escorte de siège — 0 utilise la valeur du fichier de l'IA. Le jeu d'origine ne gère pas plus de 2 groupes ; ce module permet d'aller jusqu'à 12.
 
-  Avance de la mêlée (cases) — Valeur par défaut: 4. Cette valeur s’applique si la personnalité de l’IA ne fixe aucune valeur.'
-siegedef_groups: Nombre d’escortes (0 = AIC)
+  Par défaut : 4.
+
+  Avance des groupes de mêlée devant les engins (cases) — Les groupes composés en majorité d'unités de mêlée se tiennent autant de cases plus près du château que les engins, pour que les défenseurs tirent sur eux plutôt que sur les engins. Les archers et autres troupes à distance restent près des engins. 0 maintient tous les groupes près des engins.
+
+  Par défaut : 4. Utilisé lorsque la personnalité de l'IA (AIC) ne définit pas de valeur propre.
+siegedef_groups: Nombre de groupes d'escorte de siège
 tags.behavior: Comportement

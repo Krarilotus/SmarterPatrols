@@ -1,38 +1,55 @@
-ai: 电脑玩家
+ai: AI
 diagnostics_group: 诊断
-diagnostics_group_descr: 在 ucp3.log 中查看诊断信息。
-diagnostics_log: 记录决策
-diagnostics_log_details: 默认关闭。
-general_group: 小队规模
-general_group_details: '最小规模适用于巡逻队和攻城护卫。
+diagnostics_group_descr: 用于测试和排查问题。
+diagnostics_log: 将分组行为写入日志
+diagnostics_log_details: |-
+  当部队被拆分为小队或重新合并时，向 ucp3.log 写入一行记录。
 
+  默认关闭。
+general_group: 小队设置
+general_group_details: |-
+  同时适用于两类部队。
 
-  每队最少兵力 — 默认值: 4. 电脑角色没有单独设置时使用此值。'
-general_min_size: 每队最少兵力
+  最小小队规模（单位数） — 仅在每个小队至少能分到这么多单位时才继续拆分部队。
+
+  默认：4。当 AI 个性文件（AIC）未单独指定时生效。
+general_min_size: 最小小队规模（单位数）
 improvements: 改进
 misc: 其他
-patrol_distance: 离城距离（格）
-patrol_enabled: 每队使用独立路线
-patrol_enabled_details: 默认开启。
-patrol_group: 进攻巡逻队
-patrol_group_details: '电脑玩家让多支巡逻队沿不同路线绕城。
+patrol_distance: 距城堡距离（格）
+patrol_enabled: 为每支巡逻小队分配独立路线
+patrol_enabled_details: |-
+  第 1 小队沿一个方向绕城巡逻，第 2 小队沿反方向绕城，第 3 小队在城堡正面（面向进攻方城堡的一侧）来回巡逻。第 4、5、6 小队分别重复第 1、2、3 小队的路线并滞后四分之一圈，以此类推。
 
+  默认开启。
+patrol_group: 巡逻部队
+patrol_group_details: |-
+  AI 的进攻巡逻部队（AI 文件中的 AttUnitPatrol）。在原版游戏中，只有第一支巡逻队会行动；第二支会在整个进攻期间一直停留在集结点。
 
-  巡逻队数量（0 = AIC） — 默认值: 0.
+  巡逻小队数量 — 设为 0 表示使用 AI 文件自身的设定。原版游戏最多只能处理 2 支；本模块最多支持 12 支。
 
+  默认：0。
 
-  离城距离（格） — 默认值: 12. 电脑角色没有单独设置时使用此值。'
-patrol_groups: 巡逻队数量（0 = AIC）
-siegedef_enabled: 拆分攻城护卫
-siegedef_enabled_details: 默认开启。
-siegedef_forward: 近战护卫前出距离（格）
-siegedef_group: 攻城护卫
-siegedef_group_details: '护卫小队分散保护不同的攻城器械。
+  距城堡距离（格） — 巡逻队在城堡外围行进的距离，按实际步行距离计算（会绕开城墙和护城河）。12 为原版游戏使用的距离。
 
+  默认：12。当 AI 个性文件（AIC）未单独指定时生效。
+patrol_groups: 巡逻小队数量
+siegedef_enabled: 将攻城护卫拆分为更多小队
+siegedef_enabled_details: |-
+  每支小队从不同的攻城器械出发，且每隔一支小队反向行进，使其分散覆盖所有器械，而不是挤成一团移动。
 
-  护卫小队数量（0 = AIC） — 默认值: 4.
+  默认开启。
+siegedef_forward: 近战小队走在器械前方的距离（格）
+siegedef_group: 攻城护卫部队
+siegedef_group_details: |-
+  负责保护 AI 攻城器械的部队（AI 文件中的 AttUnitSiegeDef）。他们在各攻城器械之间巡行，并在攻城总攻开始后投入进攻。
 
+  攻城护卫小队数量 — 设为 0 表示使用 AI 文件自身的设定。原版游戏最多只能处理 2 支；本模块最多支持 12 支。
 
-  近战护卫前出距离（格） — 默认值: 4. 电脑角色没有单独设置时使用此值。'
-siegedef_groups: 护卫小队数量（0 = AIC）
+  默认：4。
+
+  近战小队走在器械前方的距离（格） — 以近战兵为主的小队会比攻城器械更靠近城堡这么多格，以吸引守军火力、保护攻城器械。弓箭手和其他远程小队仍留在器械旁。设为 0 则所有小队都留在器械旁。
+
+  默认：4。当 AI 个性文件（AIC）未单独指定时生效。
+siegedef_groups: 攻城护卫小队数量
 tags.behavior: 行为

@@ -1,7 +1,7 @@
 # Smarter Patrols
 
 **Author**: Monsterfish
-**Version**: 1.0.0
+**Version**: 1.0.1
 
 Makes the AI's patrol and siege defence troops actually use all their groups during an
 attack. Both parts can be switched off in the settings.

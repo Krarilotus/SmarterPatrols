@@ -4,81 +4,56 @@ diagnostics_group_descr: 'For testing.
 
   '
 diagnostics_log: Write what the groups do to the log
-diagnostics_log_details: 'Writes a line to ucp3.log when troops are split into groups or put back together.
-
-
-  Disabled by default.'
+diagnostics_log_details: Writes a line to ucp3.log when troops are split into groups or put back together.
 general_group: Groups
-general_group_details: 'Applies to both kinds of troop.
-
-
-  Smallest group (units) — A troop is only split as far as every group still gets at least this many units.
-
-
-  Default: 4. Used when the AI personality does not supply an override.'
+general_group_details: Applies to both kinds of troop.
 general_min_size: Smallest group (units)
+general_min_size_tooltip: 'A troop is only split as far as every group still gets at least this many units.
+
+
+  Used when the AI personality does not supply an override.'
 improvements: Improvements
 misc: Miscellaneous
 patrol_distance: Distance from the castle (tiles)
+patrol_distance_tooltip: 'How far outside the castle the patrols walk, counted as walking distance (round walls and
+
+  moats). 12 is what the game''s own patrol uses.
+
+
+  Used when the AI personality does not supply an override.'
 patrol_enabled: Give every patrol group its own route
 patrol_enabled_details: 'Group 1 circles the castle one way, group 2 the other way, group 3 runs back and forth along
 
   the front (the side facing the attacker''s castle). Groups 4, 5 and 6 do the same as 1, 2 and
 
-  3, a quarter circle behind them, and so on.
-
-
-  Enabled by default.'
+  3, a quarter circle behind them, and so on.'
 patrol_group: Patrol troops
 patrol_group_details: 'The AI''s attack patrol troops (AttUnitPatrol in the AI file). Normally only the first patrol
 
-  group ever moves; the second one stands at the rally point for the whole attack.
-
-
-  Number of patrol groups — 0 uses what the AI''s own file says. The game can''t handle more than 2 by itself; this
-
-  module can (up to 12).
-
-
-  Default: 0.
-
-
-  Distance from the castle (tiles) — How far outside the castle the patrols walk, counted as walking distance (round walls and
-
-  moats). 12 is what the game''s own patrol uses.
-
-
-  Default: 12. Used when the AI personality does not supply an override.'
+  group ever moves; the second one stands at the rally point for the whole attack.'
 patrol_groups: Number of patrol groups
+patrol_groups_tooltip: '0 uses what the AI''s own file says. The game can''t handle more than 2 by itself; this
+
+  module can (up to 12).'
 siegedef_enabled: Split siege defence into more groups
 siegedef_enabled_details: 'Each group starts at a different siege engine and every second group walks the other way, so
 
-  they spread out over all the engines instead of moving as one blob.
-
-
-  Enabled by default.'
+  they spread out over all the engines instead of moving as one blob.'
 siegedef_forward: Melee groups walk this far in front of the engines (tiles)
-siegedef_group: Siege defence troops
-siegedef_group_details: 'The troops that guard the AI''s siege engines (AttUnitSiegeDef in the AI file). They walk from
-
-  one siege engine to the next and attack once the wall assault starts.
-
-
-  Number of siege defence groups — 0 uses what the AI''s own file says. The game can''t handle more than 2 by itself; this
-
-  module can (up to 12).
-
-
-  Default: 4.
-
-
-  Melee groups walk this far in front of the engines (tiles) — Groups that are mostly melee troops stand this many tiles closer to the castle than the
+siegedef_forward_tooltip: 'Groups that are mostly melee troops stand this many tiles closer to the castle than the
 
   engines, so the defenders shoot at them instead of the engines. Archers and other ranged
 
   groups stay at the engines. 0 keeps every group at the engines.
 
 
-  Default: 4. Used when the AI personality does not supply an override.'
+  Used when the AI personality does not supply an override.'
+siegedef_group: Siege defence troops
+siegedef_group_details: 'The troops that guard the AI''s siege engines (AttUnitSiegeDef in the AI file). They walk from
+
+  one siege engine to the next and attack once the wall assault starts.'
 siegedef_groups: Number of siege defence groups
+siegedef_groups_tooltip: '0 uses what the AI''s own file says. The game can''t handle more than 2 by itself; this
+
+  module can (up to 12).'
 tags.behavior: Behavior

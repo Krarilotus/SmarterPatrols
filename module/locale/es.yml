@@ -2,54 +2,36 @@ ai: IA
 diagnostics_group: Diagnóstico
 diagnostics_group_descr: Para pruebas y depuración.
 diagnostics_log: Registrar en el log lo que hacen los grupos
-diagnostics_log_details: |-
-  Escribe una línea en ucp3.log cada vez que las tropas se dividen en grupos o se vuelven a reunir.
-
-  Desactivado por defecto.
+diagnostics_log_details: Escribe una línea en ucp3.log cada vez que las tropas se dividen en grupos o se vuelven a reunir.
 general_group: Grupos
-general_group_details: |-
-  Se aplica a ambos tipos de tropas.
-
-  Grupo más pequeño (unidades) — Una tropa solo se divide mientras cada grupo conserve al menos este número de unidades.
-
-  Predeterminado: 4. Se usa cuando la personalidad de la IA (AIC) no indica un valor propio.
+general_group_details: Se aplica a ambos tipos de tropas.
 general_min_size: Grupo más pequeño (unidades)
+general_min_size_tooltip: |-
+  Una tropa solo se divide mientras cada grupo conserve al menos este número de unidades.
+
+  Se usa cuando la personalidad de la IA (AIC) no indica un valor propio.
 improvements: Mejoras
 misc: Varios
 patrol_distance: Distancia al castillo (casillas)
+patrol_distance_tooltip: |-
+  A qué distancia fuera del castillo caminan las patrullas, medida como distancia a pie (rodeando muros y fosos). 12 es el valor que usa la patrulla del juego.
+
+  Se usa cuando la personalidad de la IA (AIC) no indica un valor propio.
 patrol_enabled: Dar a cada grupo de patrulla su propia ruta
-patrol_enabled_details: |-
-  El grupo 1 rodea el castillo en un sentido, el grupo 2 en el contrario y el grupo 3 recorre de ida y vuelta el frente (el lado que mira al castillo del atacante). Los grupos 4, 5 y 6 hacen lo mismo que 1, 2 y 3 con un cuarto de vuelta de retraso, y así sucesivamente.
-
-  Activado por defecto.
+patrol_enabled_details: El grupo 1 rodea el castillo en un sentido, el grupo 2 en el contrario y el grupo 3 recorre de ida y vuelta el frente (el lado que mira al castillo del atacante). Los grupos 4, 5 y 6 hacen lo mismo que 1, 2 y 3 con un cuarto de vuelta de retraso, y así sucesivamente.
 patrol_group: Tropas de patrulla
-patrol_group_details: |-
-  Las tropas de patrulla de ataque de la IA (AttUnitPatrol en el archivo de la IA). Normalmente solo se mueve el primer grupo de patrulla; el segundo permanece quieto en el punto de reunión durante todo el ataque.
-
-  Número de grupos de patrulla — 0 usa el valor del archivo de la IA. El juego original solo admite hasta 2 grupos; este módulo permite hasta 12.
-
-  Predeterminado: 0.
-
-  Distancia al castillo (casillas) — A qué distancia fuera del castillo caminan las patrullas, medida como distancia a pie (rodeando muros y fosos). 12 es el valor que usa la patrulla del juego.
-
-  Predeterminado: 12. Se usa cuando la personalidad de la IA (AIC) no indica un valor propio.
+patrol_group_details: Las tropas de patrulla de ataque de la IA (AttUnitPatrol en el archivo de la IA). Normalmente solo se mueve el primer grupo de patrulla; el segundo permanece quieto en el punto de reunión durante todo el ataque.
 patrol_groups: Número de grupos de patrulla
+patrol_groups_tooltip: 0 usa el valor del archivo de la IA. El juego original solo admite hasta 2 grupos; este módulo permite hasta 12.
 siegedef_enabled: Dividir la escolta de asedio en más grupos
-siegedef_enabled_details: |-
-  Cada grupo empieza junto a una máquina de asedio distinta y uno de cada dos camina en sentido contrario, repartiéndose entre todas las máquinas en lugar de moverse en un solo bloque.
-
-  Activado por defecto.
+siegedef_enabled_details: Cada grupo empieza junto a una máquina de asedio distinta y uno de cada dos camina en sentido contrario, repartiéndose entre todas las máquinas en lugar de moverse en un solo bloque.
 siegedef_forward: Distancia de avance de grupos cuerpo a cuerpo ante las máquinas (casillas)
+siegedef_forward_tooltip: |-
+  Los grupos compuestos mayoritariamente por unidades cuerpo a cuerpo se colocan estas casillas más cerca del castillo que las máquinas, para que los defensores les disparen a ellos en lugar de a las máquinas. Los arqueros y demás tropas a distancia permanecen junto a las máquinas. Con 0 todos los grupos se quedan junto a las máquinas.
+
+  Se usa cuando la personalidad de la IA (AIC) no indica un valor propio.
 siegedef_group: Tropas de escolta de asedio
-siegedef_group_details: |-
-  Las tropas que protegen las máquinas de asedio de la IA (AttUnitSiegeDef en el archivo de la IA). Van de una máquina de asedio a otra y atacan en cuanto comienza el asalto a los muros.
-
-  Número de grupos de escolta de asedio — 0 usa el valor del archivo de la IA. El juego original solo admite hasta 2 grupos; este módulo permite hasta 12.
-
-  Predeterminado: 4.
-
-  Distancia de avance de grupos cuerpo a cuerpo ante las máquinas (casillas) — Los grupos compuestos mayoritariamente por unidades cuerpo a cuerpo se colocan estas casillas más cerca del castillo que las máquinas, para que los defensores les disparen a ellos en lugar de a las máquinas. Los arqueros y demás tropas a distancia permanecen junto a las máquinas. Con 0 todos los grupos se quedan junto a las máquinas.
-
-  Predeterminado: 4. Se usa cuando la personalidad de la IA (AIC) no indica un valor propio.
+siegedef_group_details: Las tropas que protegen las máquinas de asedio de la IA (AttUnitSiegeDef en el archivo de la IA). Van de una máquina de asedio a otra y atacan en cuanto comienza el asalto a los muros.
 siegedef_groups: Número de grupos de escolta de asedio
+siegedef_groups_tooltip: 0 usa el valor del archivo de la IA. El juego original solo admite hasta 2 grupos; este módulo permite hasta 12.
 tags.behavior: Comportamiento
